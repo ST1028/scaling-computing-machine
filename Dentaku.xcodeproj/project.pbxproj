@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		AF1667E31AF67666004B9D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1667E21AF67666004B9D60 /* AppDelegate.swift */; };
 		AF1667E51AF67666004B9D60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1667E41AF67666004B9D60 /* ViewController.swift */; };
-		AF1667E81AF67666004B9D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1667E61AF67666004B9D60 /* Main.storyboard */; };
 		AF1667EA1AF67666004B9D60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1667E91AF67666004B9D60 /* Images.xcassets */; };
 		AF1667ED1AF67666004B9D60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1667EB1AF67666004B9D60 /* LaunchScreen.xib */; };
 		AF1667F91AF67666004B9D60 /* DentakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1667F81AF67666004B9D60 /* DentakuTests.swift */; };
+		AFBA12871B1855E9003641CB /* ff_fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFBA12841B1855E9003641CB /* ff_fanfare.mp3 */; };
+		AFBA12881B1855E9003641CB /* btnBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFBA12851B1855E9003641CB /* btnBGM.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +31,14 @@
 		AF1667E11AF67666004B9D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF1667E21AF67666004B9D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF1667E41AF67666004B9D60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF1667E71AF67666004B9D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF1667E91AF67666004B9D60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF1667EC1AF67666004B9D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AF1667F21AF67666004B9D60 /* DentakuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DentakuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1667F71AF67666004B9D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF1667F81AF67666004B9D60 /* DentakuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentakuTests.swift; sourceTree = "<group>"; };
+		AF4074D51B1C6BCC003591B9 /* Dentaku copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Dentaku copy-Info.plist"; path = "/Users/syon/Documents/App/Dentaku/Dentaku copy-Info.plist"; sourceTree = "<absolute>"; };
+		AFBA12841B1855E9003641CB /* ff_fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ff_fanfare.mp3; sourceTree = "<group>"; };
+		AFBA12851B1855E9003641CB /* btnBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = btnBGM.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 				AF1667DF1AF67666004B9D60 /* Dentaku */,
 				AF1667F51AF67666004B9D60 /* DentakuTests */,
 				AF1667DE1AF67666004B9D60 /* Products */,
+				AF4074D51B1C6BCC003591B9 /* Dentaku copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +83,10 @@
 			children = (
 				AF1667E21AF67666004B9D60 /* AppDelegate.swift */,
 				AF1667E41AF67666004B9D60 /* ViewController.swift */,
-				AF1667E61AF67666004B9D60 /* Main.storyboard */,
 				AF1667E91AF67666004B9D60 /* Images.xcassets */,
 				AF1667EB1AF67666004B9D60 /* LaunchScreen.xib */,
+				AFBA12841B1855E9003641CB /* ff_fanfare.mp3 */,
+				AFBA12851B1855E9003641CB /* btnBGM.mp3 */,
 				AF1667E01AF67666004B9D60 /* Supporting Files */,
 			);
 			path = Dentaku;
@@ -192,8 +197,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1667E81AF67666004B9D60 /* Main.storyboard in Resources */,
 				AF1667ED1AF67666004B9D60 /* LaunchScreen.xib in Resources */,
+				AFBA12871B1855E9003641CB /* ff_fanfare.mp3 in Resources */,
+				AFBA12881B1855E9003641CB /* btnBGM.mp3 in Resources */,
 				AF1667EA1AF67666004B9D60 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,14 +242,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AF1667E61AF67666004B9D60 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF1667E71AF67666004B9D60 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AF1667EB1AF67666004B9D60 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +343,7 @@
 				INFOPLIST_FILE = Dentaku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -355,6 +354,7 @@
 				INFOPLIST_FILE = Dentaku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -411,6 +411,7 @@
 				AF1667FE1AF67666004B9D60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1667FF1AF67666004B9D60 /* Build configuration list for PBXNativeTarget "DentakuTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				AF1668011AF67666004B9D60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
