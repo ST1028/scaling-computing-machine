@@ -48,6 +48,7 @@ enum kigouBtnTag: Int {
 func resultKeisan (num:Double , kigou:String, result:Double) -> Double {
     var keisan:Double
     Flg.count = 1
+    
     switch kigou {
     case "+":
         keisan = (num) + (result)
@@ -88,11 +89,14 @@ func viewNum(num:Double) -> String {
 }
 
 
+var test = 1
+
+
 //電卓用変数
-var num : Double = 0
+var num : Double! = nil
 var kigou : String!
-var num2 : Double = 0
-var Flg = (num:0,dotto:0,count:1.0)
+var num2 : Double! = nil
+var Flg = (num:0,dotto:0,count:1.0,firstNum:0,firstNum2:0)
 var countCheck = 0
 
 //BGM用変数
@@ -280,6 +284,10 @@ class ViewController: UIViewController {
     //numの準備
     func numCheck (numLocal:String) -> String {
         var result:Double!
+        if Flg.firstNum == 0 {
+            num = 0
+            Flg.firstNum = 1
+        }
         switch numLocal {
         case "0":
             if Flg.dotto == 0 {
@@ -315,6 +323,10 @@ class ViewController: UIViewController {
     //num2の準備
     func num2Check (numLocal:String) -> String {
         var result:Double!
+        if Flg.firstNum2 == 0 {
+            num2 = 0
+            Flg.firstNum2 = 1
+        }
         switch numLocal {
         case "0":
             if Flg.dotto == 0 {
@@ -352,6 +364,7 @@ class ViewController: UIViewController {
     func numpushed(sender: UIButton){
         var btag = numBtnTag(rawValue: sender.tag)!
         player.play()
+        player.currentTime = 0
         countCheck++
         if Flg.num == 0  && countCheck < 10 {
             Label.text = viewNum(atof(numCheck(btag.toStr())))
@@ -366,7 +379,10 @@ class ViewController: UIViewController {
         var btag = kigouBtnTag(rawValue: sender.tag)!
         switch btag.toStr() {
         case "+","-","×","÷":
-            if kigou == nil {
+            if num2 == nil && kigou != nil {
+                kigou = btag.toStr()
+                num2 = atof(Label.text!)
+            } else if kigou == nil {
                 kigou = btag.toStr()
                 Flg.num = 1
                 Flg.dotto = 0
@@ -376,42 +392,51 @@ class ViewController: UIViewController {
                 var result = resultKeisan(num, kigou, num2)
                 Label.text = viewNum(result)
                 num = result
-                num2 = 0
+                num2 = nil
                 kigou = btag.toStr()
                 Flg.num = 1
                 Flg.dotto = 0
                 Flg.count = 1
                 countCheck = 0
+                Flg.firstNum = 0
+                Flg.firstNum2 = 0
             }
         case "=":
-            if kigou == nil {
+            if kigou == nil || num == nil || num2 == nil {
                 break
             } else {
                 var result = resultKeisan(num, kigou, num2)
                 Label.text = viewNum(result)
                 num = result
-                num2 = 0
+                num2 = nil
                 kigou = nil
                 Flg.num = 1
                 Flg.dotto = 0
                 Flg.count = 1
                 countCheck = 0
+                Flg.firstNum = 0
+                Flg.firstNum2 = 0
             }
         case "AC":
             num = 0
-            num2 = 0
+            num2 = nil
             kigou = nil
             Label.text = "0"
             Flg.num = 0
             Flg.dotto = 0
             Flg.count = 1
             countCheck = 0
+            Flg.firstNum = 0
+            Flg.firstNum2 = 0
         case "+/-":
             if Flg.num == 0 {
-                num = num * -1
+                num = atof(Label.text!) * -1
+                Label.text = viewNum(num)
+            } else if kigou == nil {
+                num = atof(Label.text!) * -1
                 Label.text = viewNum(num)
             } else {
-                num2 = num2 * -1
+                num2 = atof(Label.text!) * -1
                 Label.text = viewNum(num2)
             }
         case "BC":
